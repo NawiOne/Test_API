@@ -1,6 +1,6 @@
 const ExcelJs = require("exceljs");
-const dummyUser = require("../../dummyUser");
 const excelToJson = require("convert-excel-to-json");
+const dummyUser = require("../../dummyUser");
 
 const mainController = {
   primes: (req, res) => {
