@@ -21,6 +21,7 @@ const mainController = {
     }
     res.json(primesArr.slice(0, 20));
   },
+
   insertToExcel: async (req, res) => {
     const { id, email, firstName, lastName, avatar } = req.query;
     const user = {
@@ -31,7 +32,6 @@ const mainController = {
       Avatar: avatar,
     };
     const newData = dummyUser.concat(user);
-
     try {
       const workBook = new ExcelJs.Workbook();
       const worksheet = workBook.addWorksheet("data-employee");
