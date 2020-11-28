@@ -1,0 +1,21 @@
+{
+  "name": "to-excel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "server": "nodemon index.js"
+  },
+  "author": "nawi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "convert-excel-to-json": "^1.7.0",
+    "dotenv": "^8.2.0",
+    "exceljs": "^4.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6"
+  }
+}
