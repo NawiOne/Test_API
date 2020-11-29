@@ -3,6 +3,7 @@ const excelToJson = require("convert-excel-to-json");
 const dummyUser = require("../../dummyUser");
 
 const mainController = {
+  // to print primes
   primes: (req, res) => {
     const { num } = req.query;
     let primesArr = [];
@@ -21,7 +22,7 @@ const mainController = {
     }
     res.json(primesArr.slice(0, 20));
   },
-
+// export to excel file
   insertToExcel: async (req, res) => {
     const { id, email, firstName, lastName, avatar } = req.query;
     const user = {
@@ -57,7 +58,7 @@ const mainController = {
       res.send("error");
     }
   },
-
+// read from excel file
   readExcel: (_, res) => {
     const result = excelToJson({
       sourceFile: "users.xlsx",
