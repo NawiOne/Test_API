@@ -1,4 +1,4 @@
-<h1 align="center">Simple MAP</h1>
+<h1 align="center">simple API</h1>
 
 ## Requirements
 * [`node js`](https://nodejs.org/en/)
