@@ -11,15 +11,15 @@
 4. Type `npm run server` for run this app.
 
 ## URL
-1. to get 20 primes:
+### to get 20 primes:
    - `http://localhost:8000/primes?num=5` (method GET)
   
-2. to add data excel:
+### to add data excel:
    - use Postman (recomended)
    - `http://localhost:8000/user` (method POST)
    - in query params input (id, email, firstName, lastName, avatar)
 
-3. to get data from excel file:
+### to get data from excel file:
    - `http://localhost:8000/user` (method GET)
 
 ## Contributors

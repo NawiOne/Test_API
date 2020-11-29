@@ -18,7 +18,7 @@ const mainController = {
       }
       if (i > 1 && count === 0) {
         primesArr.push(i);
-      }
+      } 
     }
     res.json(primesArr.slice(0, 20));
   },
