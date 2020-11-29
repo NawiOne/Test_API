@@ -55,13 +55,20 @@ const mainController = {
       await workBook.xlsx.writeFile("users.xlsx");
       res.send("sukses");
     } catch (e) {
-      res.send("error");
+      res.send(`error: ${e}`);
     }
   },
 // read from excel file
   readExcel: (_, res) => {
     const result = excelToJson({
       sourceFile: "users.xlsx",
+      columnToKey: {
+        A: 'Id',
+        B: 'Email',
+        C: 'FirstName',
+        D: 'LastName',
+        E: 'Avatar',
+    }
     });
     res.send(result);
   },
