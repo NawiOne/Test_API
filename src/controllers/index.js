@@ -7,8 +7,7 @@ const mainController = {
   primes: (req, res) => {
     const { num } = req.query;
     let primesArr = [];
-    let max = num + 100;
-    for (let i = Number(num) + 1; i <= max; i++) {
+    for (let i = Number(num) + 1; i > num; i++) {
       let count = 0;
       for (let j = 2; j < i; j++) {
         if (i % j === 0) {
@@ -16,13 +15,17 @@ const mainController = {
           break;
         }
       }
-      if (i > 1 && count === 0) {
-        primesArr.push(i);
-      } 
+      if (primesArr.length < 20) {
+        if (i > 1 && count === 0) {
+          primesArr.push(i);
+        }
+      } else if (primesArr.length === 20) {
+        break;
+      }
     }
     res.json(primesArr.slice(0, 20));
   },
-// export to excel file
+  // export to excel file
   insertToExcel: async (req, res) => {
     const { id, email, firstName, lastName, avatar } = req.query;
     const user = {
@@ -58,17 +61,17 @@ const mainController = {
       res.send(`error: ${e}`);
     }
   },
-// read from excel file
+  // read from excel file
   readExcel: (_, res) => {
     const result = excelToJson({
       sourceFile: "users.xlsx",
       columnToKey: {
-        A: 'Id',
-        B: 'Email',
-        C: 'FirstName',
-        D: 'LastName',
-        E: 'Avatar',
-    }
+        A: "Id",
+        B: "Email",
+        C: "FirstName",
+        D: "LastName",
+        E: "Avatar",
+      },
     });
     res.send(result);
   },
