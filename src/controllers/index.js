@@ -7,7 +7,7 @@ const mainController = {
   primes: (req, res) => {
     const { num } = req.query;
     let primesArr = [];
-    for (let i = Number(num) + 1; i > num; i++) {
+    for (let i = Number(num)+1; i > num; i++) {
       let count = 0;
       for (let j = 2; j < i; j++) {
         if (i % j === 0) {
@@ -16,14 +16,14 @@ const mainController = {
         }
       }
       if (primesArr.length < 20) {
-        if (i > 1 && count === 0) {
+        if (count === 0) {
           primesArr.push(i);
         }
       } else if (primesArr.length === 20) {
         break;
       }
     }
-    res.json(primesArr.slice(0, 20));
+    res.json(primesArr);
   },
   // export to excel file
   insertToExcel: async (req, res) => {
