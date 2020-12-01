@@ -6,7 +6,7 @@ const mainController = {
   // to print primes
   primes: (req, res) => {
     const { num } = req.query;
-    let primesArr = [];
+    const primesArr = [];
     for (let i = Number(num)+1; i > num; i++) {
       let count = 0;
       for (let j = 2; j < i; j++) {
